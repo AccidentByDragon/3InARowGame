@@ -1,0 +1,11 @@
+{
+  "name": "3inarowgame",
+  "version": "1.0.0",
+  "description": "assignment for uni using Javascript, HTML, CSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
