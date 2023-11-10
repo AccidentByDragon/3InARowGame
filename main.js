@@ -1,3 +1,5 @@
+// import fs from "fs";
+
 let users = [
   {
     name: "Karl",
@@ -6,22 +8,24 @@ let users = [
 ]
 const header = document.createElement("header");
 const aRefGame = document.createElement("a");
+const headerNav = document.createElement("nav")
 
 aRefGame.innerText = "Game";
 aRefGame.href = "#Game";
-header.appendChild(aRefGame);
-document.body.appendChild(header);
+headerNav.appendChild(aRefGame);
+
 
 const aRefRegistration = document.createElement("a")
 aRefRegistration.innerText = "Registration";
 aRefRegistration.href = "#Registration";
-header.appendChild(aRefRegistration);
+headerNav.appendChild(aRefRegistration);
 
 const aRefUsers = document.createElement("a");
 aRefUsers.innerText = "Users";
 aRefUsers.href = "#Users";
-header.appendChild(aRefUsers);
-
+headerNav.appendChild(aRefUsers);
+header.appendChild(headerNav);
+document.body.appendChild(header);
 
 //Registration Section
 const sectionRegistration = document.createElement("section");
@@ -30,6 +34,8 @@ const sectionRegistrationH2 = document.createElement("h2");
 sectionRegistrationH2.innerText = "Register";
 sectionRegistration.appendChild(sectionRegistrationH2);
 // Registration Code here
+
+
 
 document.body.appendChild(sectionRegistration);
 
