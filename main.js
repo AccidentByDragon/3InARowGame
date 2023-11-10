@@ -34,10 +34,46 @@ const sectionRegistrationH2 = document.createElement("h2");
 sectionRegistrationH2.innerText = "Register";
 sectionRegistration.appendChild(sectionRegistrationH2);
 // Registration Code here
+const registerForm = document.createElement("form");
+registerForm.id = "userForm";
+const labelUsername = document.createElement("label");
+labelUsername.innerText = "Username: ";
+const inputLun = document.createElement("input");
+inputLun.type = "text";
+inputLun.id = "userName";
+const labelPassword = document.createElement("label");
+labelPassword.innerText = "Password";
+const inputUpw = document.createElement("input");
+inputUpw.type = "text";
+inputUpw.id = "password";
+const inputSubmit = document.createElement("input");
+inputSubmit.type = "button";
+inputSubmit.value = "Submit";
 
 
-
+registerForm.appendChild(labelUsername);
+registerForm.appendChild(inputLun);
+registerForm.appendChild(labelPassword);
+registerForm.appendChild(inputUpw);
+registerForm.appendChild(inputSubmit);
+sectionRegistration.appendChild(registerForm);
 document.body.appendChild(sectionRegistration);
+
+// Process added user
+document.querySelector(`#userForm`).addEventListener(`Submit`, registerUser);
+function registerUser(event) {
+  event.preventDefault();
+
+  const usernameSt = document.getElementById(`userName`).value;
+  const passwordSt = document.getElementById(`password`).value;
+
+  console.log("Username - ", usernameSt);
+  console.log("Password - ", passwordSt);
+
+}  
+
+
+
 
 
 //Game Section
@@ -65,16 +101,13 @@ const uTBody = document.createElement("thead");
 const uTrHead = document.createElement("tr");
 const uThName = document.createElement("th");
 const uThScore = document.createElement("th");
-const uThGame = document.createElement("th");
 const uThHistory = document.createElement("th");
 
 uThName.innerText = "User name";
 uThScore.innerText = "User Score";
-uThGame.innerText = "Play Agaisnt";
 uThHistory.innerText = "Match History";
 
 uTrHead.appendChild(uThName);
-uTrHead.appendChild(uThGame);
 uTrHead.appendChild(uThScore);
 uTrHead.appendChild(uThHistory);
 uTHead.appendChild(uTrHead);
@@ -85,17 +118,14 @@ for (let user of users) {
   
   const userRow = document.createElement("tr");
   const userName = document.createElement("td");
-  const userGame = document.createElement("td");
   const userScore = document.createElement("td");
   const userHistory = document.createElement("td");
   
   userName.innerText = user.name;
-  userGame.innerText = "Play";
   userScore.innerText = user.score;
   userHistory.innerText = "See Match History"
 
   userRow.appendChild(userName);
-  userRow.appendChild(userGame);
   userRow.appendChild(userScore);
   userRow.appendChild(userHistory);
   uTBody.appendChild(userRow)
