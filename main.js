@@ -63,14 +63,17 @@ const uTrHead = document.createElement("tr");
 const uThName = document.createElement("th");
 const uThScore = document.createElement("th");
 const uThGame = document.createElement("th");
+const uThHistory = document.createElement("th");
 
 uThName.innerText = "User name";
 uThScore.innerText = "User Score";
 uThGame.innerText = "Play Agaisnt";
+uThHistory.innerText = "Match History";
 
 uTrHead.appendChild(uThName);
 uTrHead.appendChild(uThGame);
 uTrHead.appendChild(uThScore);
+uTrHead.appendChild(uThHistory);
 uTHead.appendChild(uTrHead);
 userTable.appendChild(uTHead);
 userTable.appendChild(uTBody);
@@ -81,15 +84,17 @@ for (let user of users) {
   const userName = document.createElement("td");
   const userGame = document.createElement("td");
   const userScore = document.createElement("td");
+  const userHistory = document.createElement("td");
   
   userName.innerText = user.name;
   userGame.innerText = "Play";
   userScore.innerText = user.score;
+  userHistory.innerText = "See Match History"
 
   userRow.appendChild(userName);
   userRow.appendChild(userGame);
   userRow.appendChild(userScore);
-
+  userRow.appendChild(userHistory);
   uTBody.appendChild(userRow)
 }
 sectionUsers.appendChild(userTable);
