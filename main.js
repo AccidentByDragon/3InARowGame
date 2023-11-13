@@ -28,6 +28,8 @@ headerNav.appendChild(aRefUsers);
 header.appendChild(headerNav);
 document.body.appendChild(header);
 
+const userLoggedIn = false;
+
 //Registration Section
 const sectionRegistration = document.createElement("section");
 sectionRegistration.id = "Registration";
@@ -60,6 +62,7 @@ registerForm.appendChild(inputSubmit);
 sectionRegistration.appendChild(registerForm);
 document.body.appendChild(sectionRegistration);
 
+
 // Process added user
 document.querySelector(`#userForm`).addEventListener(`Submit`, registerUser);
 function registerUser(event) {
@@ -70,7 +73,7 @@ function registerUser(event) {
 
   console.log("Username - ", usernameSt);
   console.log("Password - ", passwordSt);
-  
+
   const userExists = users.some(users =>
     users.username === usernameSt && users.password === passwordSt);
   console.log("Did user exist - ", userExists);
