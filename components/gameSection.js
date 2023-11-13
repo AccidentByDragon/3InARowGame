@@ -7,6 +7,7 @@ export default function Game() {
   sectionGame.appendChild(sectionGameHeader)
 //Game Code here
 
+  
 
 
   return sectionGame;
