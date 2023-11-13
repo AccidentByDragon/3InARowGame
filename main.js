@@ -83,9 +83,7 @@ function registerUser(event) {
   }
   else {
     users.push({name: usernameSt, password: passwordSt, score: 0})
-  }
-  
-
+  }  
 }  
 
 
@@ -99,6 +97,8 @@ const sectionGameHeader = document.createElement("h2");
 sectionGameHeader.innerText = "Game";
 sectionGame.appendChild(sectionGameHeader)
 //Game Code here
+
+
 
 document.body.appendChild(sectionGame);
 
