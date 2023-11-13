@@ -1,4 +1,4 @@
-import registrationSection from "./components/registrationSection.js";
+//import registrationSection from "./components/registrationSection.js";
 import Game from "./components/gameSection.js"
 import UserSection from "./components/userSection.js"
 
@@ -38,7 +38,7 @@ document.body.appendChild(header);
 const userLoggedIn = false;
 
 //Registration Section
-document.body.appendChild(registrationSection());
+//document.body.appendChild(registrationSection(users));
 
 //Game Section
 document.body.appendChild(Game());

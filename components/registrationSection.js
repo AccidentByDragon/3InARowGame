@@ -1,4 +1,4 @@
-export default function registrationSection(){
+export default function registrationSection(users){
   const sectionRegistration = document.createElement("section");
   sectionRegistration.id = "Registration";
   const sectionRegistrationH2 = document.createElement("h2");
