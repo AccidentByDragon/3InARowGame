@@ -1,0 +1,1 @@
+import registrationSection from "./components/registrationSection";
