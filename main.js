@@ -3,7 +3,8 @@
 let users = [
   {
     name: "Karl",
-    score: 100
+    password: "Admin",
+    score: 100    
   }
 ]
 const header = document.createElement("header");
@@ -69,6 +70,18 @@ function registerUser(event) {
 
   console.log("Username - ", usernameSt);
   console.log("Password - ", passwordSt);
+  
+  const userExists = users.some(users =>
+    users.username === usernameSt && users.password === passwordSt);
+  console.log("Did user exist - ", userExists);
+
+  if (userExists == true) {
+    
+  }
+  else {
+    users.push({name: usernameSt, password: passwordSt, score: 0})
+  }
+  
 
 }  
 
