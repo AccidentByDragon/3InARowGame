@@ -41,7 +41,9 @@ export default function UserSection(users) {
     userRow.appendChild(userHistory);
     uTBody.appendChild(userRow)
   }
-  sectionUsers.appendChild(userTable);
 
+  sectionUsers.appendChild(userTable);
   document.body.appendChild(sectionUsers)
+
+  return sectionUsers;
 }

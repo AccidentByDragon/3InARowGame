@@ -31,11 +31,11 @@ export default function registrationSection(){
   sectionRegistration.appendChild(registerForm);
   document.body.appendChild(sectionRegistration);
 
-
-  // Process added user
   document.querySelector(`#userForm`).addEventListener(`Submit`, registerUser);
-  
+  return sectionRegistration;
 }
+
+// Process added user
 function registerUser(event) {
     event.preventDefault();
 

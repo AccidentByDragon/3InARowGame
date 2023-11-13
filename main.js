@@ -43,7 +43,6 @@ document.body.appendChild(registrationSection());
 //Game Section
 document.body.appendChild(Game());
 
-
 //User Section
 document.body.appendChild(UserSection(users));
 
