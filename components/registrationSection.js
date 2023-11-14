@@ -50,7 +50,7 @@ function registerUser(event) {
     console.log("Did user exist - ", userExists);
 
     if (userExists == true) {
-
+      window.location.assign("MainPage.html");
     }
     else {
       users.push({ name: usernameSt, password: passwordSt, score: 0 })

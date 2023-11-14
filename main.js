@@ -14,6 +14,14 @@ let users = [
     score: 0
   }
 ]
+let matchHistory = [
+  {
+    winnerName: "Karl",
+    turnsPlayed: 5
+  }
+  
+]
+
 const header = document.createElement("header");
 const aRefGame = document.createElement("a");
 const headerNav = document.createElement("nav")

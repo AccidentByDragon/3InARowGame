@@ -15,6 +15,18 @@ table{
   margin-bottom: 5px;
   background-color: #999;
 }
-/* #cell:nth-child(3n){
-  background-color: #f00;
-} */
+#player1Cell{
+  flex: 0 0 32%;
+  height: 150px;
+  width: 50px;
+  margin-bottom: 5px;
+  background-color: blue;
+}
+
+#player2Cell{
+  flex: 0 0 32%;
+  height: 150px;
+  width: 50px;
+  margin-bottom: 5px;
+  background-color: yellow;
+}
