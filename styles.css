@@ -2,6 +2,19 @@ table{
   border: 2px solid black;
 }
 
-/* form{
+#grid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
+#cell{
+  flex:0 0 32%;
+  height: 150px;
+  width: 50px;
+  margin-bottom: 5px;
+  background-color: #999;
+}
+/* #cell:nth-child(3n){
+  background-color: #f00;
 } */
