@@ -1,16 +1,16 @@
-//import registrationSection from "./components/registrationSection.js";
+import registrationSection from "./components/registrationSection.js";
 import Game from "./components/gameSection.js"
 import UserSection from "./components/userSection.js"
 
 let users = [
   {
     name: "Karl",
-    password: "Admin",
+    //password: "Admin",
     score: 100    
   },
   {  
     name: "Bob",
-    password: "Bob",
+    //password: "Bob",
     score: 0
   }
 ]
@@ -46,7 +46,7 @@ document.body.appendChild(header);
 const userLoggedIn = false;
 
 //Registration Section
-//document.body.appendChild(registrationSection(users));
+document.body.appendChild(registrationSection(users));
 
 //Game Section
 document.body.appendChild(Game());

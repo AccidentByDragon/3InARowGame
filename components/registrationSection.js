@@ -1,4 +1,9 @@
-export default function registrationSection(users){
+export default function registrationSection(users) {
+  const tempUsers = [];
+  for (let user of users) {
+    tempUsers.push(user)
+  }
+
   const sectionRegistration = document.createElement("section");
   sectionRegistration.id = "Registration";
   const sectionRegistrationH2 = document.createElement("h2");
@@ -13,11 +18,11 @@ export default function registrationSection(users){
   const inputLun = document.createElement("input");
   inputLun.type = "text";
   inputLun.id = "userName";
-  const labelPassword = document.createElement("label");
-  labelPassword.innerText = "Password";
-  const inputUpw = document.createElement("input");
-  inputUpw.type = "text";
-  inputUpw.id = "password";
+  //const labelPassword = document.createElement("label");
+  //labelPassword.innerText = "Password";
+  //const inputUpw = document.createElement("input");
+  //inputUpw.type = "text";
+  //inputUpw.id = "password";
   const inputSubmit = document.createElement("input");
   inputSubmit.type = "button";
   inputSubmit.value = "Submit";
@@ -25,8 +30,8 @@ export default function registrationSection(users){
 
   registerForm.appendChild(labelUsername);
   registerForm.appendChild(inputLun);
-  registerForm.appendChild(labelPassword);
-  registerForm.appendChild(inputUpw);
+  //registerForm.appendChild(labelPassword);
+  //registerForm.appendChild(inputUpw);
   registerForm.appendChild(inputSubmit);
   sectionRegistration.appendChild(registerForm);
   document.body.appendChild(sectionRegistration);
@@ -35,8 +40,22 @@ export default function registrationSection(users){
   return sectionRegistration;
 }
 
+function registerUser(event)
+{ 
+  const userExists = users.some(users =>
+    users.username === usernameSt);
+  console.log("Did user exist - ", userExists);
+  if (userExists == true) {
+    alert("a user by this name already exists")
+  }
+  else {
+    tempUsers.push({name: usernameSt, score: 0})
+  }
+}
+
+
 // Process added user
-function registerUser(event) {
+/* function registerUser(event) {
     event.preventDefault();
 
     const usernameSt = document.getElementById(`userName`).value;
@@ -55,4 +74,4 @@ function registerUser(event) {
     else {
       users.push({ name: usernameSt, password: passwordSt, score: 0 })
     }
-  }
+  } */

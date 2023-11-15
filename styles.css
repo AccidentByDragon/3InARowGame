@@ -8,14 +8,14 @@ table{
   justify-content: space-around;
 }
 
-#cell{
+.cell{
   flex:0 0 32%;
   height: 150px;
   width: 50px;
   margin-bottom: 5px;
   background-color: #999;
 }
-#player1Cell{
+.player1Cell{
   flex: 0 0 32%;
   height: 150px;
   width: 50px;
@@ -23,7 +23,7 @@ table{
   background-color: blue;
 }
 
-#player2Cell{
+.player2Cell{
   flex: 0 0 32%;
   height: 150px;
   width: 50px;
