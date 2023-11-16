@@ -1,21 +1,59 @@
 //Game Section
-export default function Game() {
+export default function Game(plyrList) {
   const sectionGame = document.createElement("section");
   sectionGame.id = "Game";
   const sectionGameHeader = document.createElement("h2");
   sectionGameHeader.innerText = "Game";
   sectionGame.appendChild(sectionGameHeader)
 
-  let currentPlayers = [
-    {
-      name: "player1",
-    },
-    {
-      name: "player2",
-    }
-  ]
-  let roundNumber = 0;
+  let currentPlayers = []
   let gameStarted = false;
+
+  const sectionPlyrSlct = document.createElement("section");
+  sectionPlyrSlct.id = "playerSelect"
+  const plyrSlctForm = document.createElement("form");
+  plyrSlctForm.id = "playerSelectForm"
+  const plyrSlctSelect1 = document.createElement("select")
+  plyrSlctSelect1.id = "playerSelect1"
+  plyrList.forEach(user => {
+    const option = document.createElement("option");
+    option.value = user.name;
+    option.textContent = user.name;
+    plyrSlctSelect1.appendChild(option)
+  });
+  const plyrSlctSelect2 = document.createElement("select");
+  plyrSlctSelect2.id = "playerSelect2"
+  plyrList.forEach(user => {
+    const option = document.createElement("option");
+    option.value = user.name;
+    option.textContent = user.name;
+    plyrSlctSelect2.appendChild(option)
+  });
+  const plyrSlctBttn = document.createElement("input");
+  plyrSlctBttn.type = "submit"
+  plyrSlctBttn.id = "playerSelectButton"
+  plyrSlctBttn.value = "Select Players"
+
+  plyrSlctForm.appendChild(plyrSlctSelect1);
+  plyrSlctForm.appendChild(plyrSlctSelect2);
+  plyrSlctForm.appendChild(plyrSlctBttn);
+  sectionPlyrSlct.appendChild(plyrSlctForm);
+  sectionGame.appendChild(sectionPlyrSlct);
+
+  sectionPlyrSlct.addEventListener("click", function (event) {
+    if (event.target.id == "playerSelectButton") {
+      event.preventDefault();      
+      const tempSelection1 = plyrSlctSelect1.options[plyrSlctSelect1.selectedIndex].value;
+      const tempSelection2 = plyrSlctSelect2.options[plyrSlctSelect2.selectedIndex].value;
+      currentPlayers.push(tempSelection1)
+      currentPlayers.push(tempSelection2)
+      alert(`${tempSelection1} and ${tempSelection2} added to current players`)
+      gameStarted = true;
+    }
+  })
+
+
+  let roundNumber = 0;  
   let player1Turn = true;
   let player2Turn = false;
   let player1Pieces = 3;
@@ -63,14 +101,14 @@ export default function Game() {
 
   gameGrid.addEventListener("click", function (event) {
     if (event.target.className === "cell") {
-      if (player1Turn === true && player1Pieces != 0) {
+      if (player1Turn === true && player1Pieces != 0 && gameStarted === true) {
         const tempTarget = event.target;        
         tempTarget.className = "player1Cell";
         player2Turn = true;
         player1Turn = false;
         player1Pieces = player1Pieces - 1;        
         checkWin1();
-      } else if (player2Turn === true && player2Pieces != 0) {
+      } else if (player2Turn === true && player2Pieces != 0 && gameStarted === true) {
         const tempTarget = event.target;
         tempTarget.className = "player2Cell";
         player1Turn = true;
@@ -81,7 +119,7 @@ export default function Game() {
       }
     }
     else if (event.target.className === "player1Cell") {
-      if (player1Turn === true && player1Pieces === 0) {
+      if (player1Turn === true && player1Pieces === 0 && gameStarted === true) {
         const tempTarget = event.target;
         tempTarget.className = "cell"
         player1Pieces++;
@@ -91,7 +129,7 @@ export default function Game() {
       }
     }
     else if (event.target.className === "player2Cell") {
-      if (player2Turn === true && player2Pieces === 0) {
+      if (player2Turn === true && player2Pieces === 0 && gameStarted === true) {
         const tempTarget = event.target;
         tempTarget.className = "cell"
         player2Pieces++;
@@ -152,6 +190,10 @@ export default function Game() {
     if (gameCell3x1.className === "player2Cell" && gameCell2x2.className === "player2Cell" && gameCell1x3.className === "player2Cell") {
       alert(`player2 has won`)
     }
+  }
+
+  function printGameResult(winner, loser, roundsPlayed) {
+    
   }
   return sectionGame;
 }

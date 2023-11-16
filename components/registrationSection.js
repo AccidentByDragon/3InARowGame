@@ -42,6 +42,7 @@ export default function registrationSection(users) {
 
 function registerUser(event)
 { 
+  event.preventDefault();
   const userExists = users.some(users =>
     users.username === usernameSt);
   console.log("Did user exist - ", userExists);

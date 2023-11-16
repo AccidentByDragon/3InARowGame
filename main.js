@@ -49,7 +49,7 @@ const userLoggedIn = false;
 document.body.appendChild(registrationSection(users));
 
 //Game Section
-document.body.appendChild(Game());
+document.body.appendChild(Game(users));
 
 //User Section
 document.body.appendChild(UserSection(users));
