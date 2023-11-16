@@ -141,60 +141,77 @@ export default function Game(plyrList) {
   })
   function checkWin1() {
     if (gameCell1x1.className === "player1Cell" && gameCell1x2.className === "player1Cell" && gameCell1x3.className ==="player1Cell") {
-      alert(`player1 has won`)
+      gameStarted = false;
+      alert(`player1 has won`)      
     }
     if (gameCell2x1.className === "player1Cell" && gameCell2x2.className === "player1Cell" && gameCell2x3.className === "player1Cell") {
+      gameStarted = false;
       alert(`player1 has won`)
     }
     if (gameCell3x1.className === "player1Cell" && gameCell3x2.className === "player1Cell" && gameCell3x3.className === "player1Cell") {
+      gameStarted = false;
       alert(`player1 has won`)
     }
     if (gameCell1x1.className === "player1Cell" && gameCell2x1.className === "player1Cell" && gameCell3x1.className === "player1Cell") {
+      gameStarted = false;
       alert(`player1 has won`)
     }
     if (gameCell1x2.className === "player1Cell" && gameCell2x2.className === "player1Cell" && gameCell3x2.className === "player1Cell") {
+      gameStarted = false;
       alert(`player1 has won`)
     }
     if (gameCell1x3.className === "player1Cell" && gameCell2x3.className === "player1Cell" && gameCell3x3.className === "player1Cell") {
+      gameStarted = false;
       alert(`player1 has won`)
     }
     if (gameCell1x1.className === "player1Cell" && gameCell2x2.className === "player1Cell" && gameCell3x3.className === "player1Cell") {
+      gameStarted = false;
       alert(`player1 has won`)
     }
     if (gameCell3x1.className === "player1Cell" && gameCell2x2.className === "player1Cell" && gameCell1x3.className === "player1Cell") {
+      gameStarted = false;
       alert(`player1 has won`)
     }    
   }
   function checkWin2() {
     if (gameCell1x1.className === "player2Cell" && gameCell1x2.className === "player2Cell" && gameCell1x3.className === "player2Cell") {
+      gameStarted = false;
       alert(`player2 has won`)
     }
     if (gameCell2x1.className === "player2Cell" && gameCell2x2.className === "player2Cell" && gameCell2x3.className === "player2Cell") {
+      gameStarted = false;
       alert(`player2 has won`)
     }
     if (gameCell3x1.className === "player2Cell" && gameCell3x2.className === "player2Cell" && gameCell3x3.className === "player2Cell") {
+      gameStarted = false;
       alert(`player2 has won`)
     }
     if (gameCell1x1.className === "player2Cell" && gameCell2x1.className === "player2Cell" && gameCell3x1.className === "player2Cell") {
+      gameStarted = false;
       alert(`player2 has won`)
     }
     if (gameCell1x2.className === "player2Cell" && gameCell2x2.className === "player2Cell" && gameCell3x2.className === "player2Cell") {
+      gameStarted = false;
       alert(`player2 has won`)
     }
     if (gameCell1x3.className === "player2Cell" && gameCell2x3.className === "player2Cell" && gameCell3x3.className === "player2Cell") {
+      gameStarted = false;
       alert(`player2 has won`)
     }
     if (gameCell1x1.className === "player2Cell" && gameCell2x2.className === "player2Cell" && gameCell3x3.className === "player2Cell") {
+      gameStarted = false;
       alert(`player2 has won`)
     }
     if (gameCell3x1.className === "player2Cell" && gameCell2x2.className === "player2Cell" && gameCell1x3.className === "player2Cell") {
+      gameStarted = false;
       alert(`player2 has won`)
     }
   }
-
   function printGameResult(winner, loser, roundsPlayed) {
-    
+    const matchResultString = `${winner} has won agaisnt ${loser} after ${roundsPlayed} rounds played`
+    alert(`${matchResultString}`)
   }
+
   return sectionGame;
 }
 
