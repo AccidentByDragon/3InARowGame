@@ -1,0 +1,16 @@
+{
+  "users":[
+    {
+    "id": 1,
+    "name": "Karl",
+    "matchAmount": 1,
+    "results": []
+    },
+    {  
+    "id": 2,
+    "name": "Bob",    
+    "matchAmount": 1,
+    "results": []
+    }
+  ]
+}
