@@ -45,10 +45,16 @@ export default function Game(plyrList) {
       event.preventDefault();      
       const tempSelection1 = plyrSlctSelect1.options[plyrSlctSelect1.selectedIndex].value;
       const tempSelection2 = plyrSlctSelect2.options[plyrSlctSelect2.selectedIndex].value;
-      currentPlayers.push(tempSelection1)
-      currentPlayers.push(tempSelection2)
-      alert(`${tempSelection1} and ${tempSelection2} added to current players`)
-      gameStarted = true;
+
+      if (tempSelection1 != tempSelection2) {
+        currentPlayers.push(tempSelection1)
+        currentPlayers.push(tempSelection2)
+        alert(`${tempSelection1} and ${tempSelection2} added to current players`)
+        gameStarted = true;
+      } else {
+        alert("You must select two different Players")
+      }
+
     }
   })
 
@@ -219,6 +225,8 @@ export default function Game(plyrList) {
       loser: loser,
       roundsPlayed: roundsPlayed
     }
+
+    //push match results to json server
   }
 
   return sectionGame;

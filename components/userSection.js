@@ -15,7 +15,7 @@ export default function UserSection(users) {
   const uThHistory = document.createElement("th");
 
   uThName.innerText = "User name";
-  uThScore.innerText = "User Score";
+  uThScore.innerText = "Number of wins";
   uThHistory.innerText = "Match History";
 
   uTrHead.appendChild(uThName);
