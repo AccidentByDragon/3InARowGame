@@ -139,6 +139,7 @@ export default function Game(plyrList) {
       }
     }
   })
+
   function checkWin1() {
     if (gameCell1x1.className === "player1Cell" && gameCell1x2.className === "player1Cell" && gameCell1x3.className ==="player1Cell") {
       gameStarted = false;
@@ -173,6 +174,7 @@ export default function Game(plyrList) {
       alert(`player1 has won`)
     }    
   }
+
   function checkWin2() {
     if (gameCell1x1.className === "player2Cell" && gameCell1x2.className === "player2Cell" && gameCell1x3.className === "player2Cell") {
       gameStarted = false;
@@ -207,9 +209,16 @@ export default function Game(plyrList) {
       alert(`player2 has won`)
     }
   }
+  
   function printGameResult(winner, loser, roundsPlayed) {
-    const matchResultString = `${winner} has won agaisnt ${loser} after ${roundsPlayed} rounds played`
-    alert(`${matchResultString}`)
+    const matchResultStringWin = `${winner} won agaisnt ${loser} after ${roundsPlayed} rounds played`
+    const matchResultStringLoss = `${loser} lost against ${winner} after ${roundsPlayed} rounds played`
+    
+    matchResults = {
+      winner: winner,
+      loser: loser,
+      roundsPlayed: roundsPlayed
+    }
   }
 
   return sectionGame;

@@ -6,18 +6,19 @@ let users = [
   {
     name: "Karl",
     //password: "Admin",
-    score: 100    
+    results: []
   },
   {  
     name: "Bob",
     //password: "Bob",
-    score: 0
+    results: []
   }
 ]
 let matchHistory = [
   {
-    winnerName: "Karl",
-    turnsPlayed: 5
+    winner: "Karl",
+    loser: "Bob",
+    roundsPlayed: 5
   }
   
 ]
