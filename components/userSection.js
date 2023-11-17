@@ -33,7 +33,7 @@ export default function UserSection(users) {
     const userHistory = document.createElement("td");
 
     userName.innerText = user.name;
-    userScore.innerText = user.score;
+    userScore.innerText = user.matchAmount;
     userHistory.innerText = "See Match History"
 
     userRow.appendChild(userName);

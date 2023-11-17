@@ -6,11 +6,13 @@ let users = [
   {
     name: "Karl",
     //password: "Admin",
+    matchAmount: 1,
     results: []
   },
   {  
     name: "Bob",
     //password: "Bob",
+    matchAmount: 1,
     results: []
   }
 ]
