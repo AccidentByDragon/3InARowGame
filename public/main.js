@@ -2,10 +2,12 @@ import registrationSection from "./components/registrationSection.js";
 import Game from "./components/gameSection.js"
 import UserSection from "./components/userSection.js"
 import usersManagement from "./components/userManagement.js";
-import { fetchCurrentUsers } from "./components/userManagement.js";
+import { pushUser } from "./components/userManagement.js";
+//import { fetchCurrentUsers } from "./components/userManagement.js";
 
-fetchCurrentUsers();
-let users = usersManagement();
+//fetchCurrentUsers();
+let users =[]
+pushUser(users, "bob");
 
 
 const header = document.createElement("header");
@@ -29,8 +31,6 @@ headerNav.appendChild(aRefUsers);
 header.appendChild(headerNav);
 document.body.appendChild(header);
 
-const userLoggedIn = false;
-
 //Registration Section
 document.body.appendChild(registrationSection(users));
 
@@ -40,3 +40,13 @@ document.body.appendChild(Game(users));
 //User Section
 document.body.appendChild(UserSection(users));
 
+/* function pushUser(users = [], userAdd) {
+  const newUser = {
+    //id: nextId,
+    name: userAdd,
+    matchAmount: 0,
+    results: []
+  }
+  users.push(newUser)
+  return users;
+} */

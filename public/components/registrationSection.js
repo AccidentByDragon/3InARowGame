@@ -1,4 +1,4 @@
-//import usersManagement from "./components/userManagement.js";
+import { pushUser } from "./userManagement.js";
 
 export default function registrationSection(users) {
   const tempUsers = [];
@@ -52,8 +52,9 @@ function registerUser(event)
     alert("a user by this name already exists")
   }
   else {
-    tempUsers.push({name: usernameSt, matchAmount: 0, results: []})
+    users = pushUser(users, usernameSt);    
   }
+  return users;
 }
 
 

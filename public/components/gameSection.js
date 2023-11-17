@@ -1,4 +1,5 @@
-//import usersManagement from "./components/userManagement.js";
+import userManagement from "./userManagement.js";
+import { pushGameResult } from "./userManagement.js";
 
 export default function Game(plyrList) {
   const sectionGame = document.createElement("section");
@@ -63,6 +64,8 @@ export default function Game(plyrList) {
   let roundNumber = 0;  
   let player1Turn = true;
   let player2Turn = false;
+  let player1Win = false;
+  let player2Win = false;
   let player1Pieces = 3;
   let player2Pieces = 3;
   const gameGrid = document.createElement("div");
@@ -150,84 +153,90 @@ export default function Game(plyrList) {
   function checkWin1() {
     if (gameCell1x1.className === "player1Cell" && gameCell1x2.className === "player1Cell" && gameCell1x3.className ==="player1Cell") {
       gameStarted = false;
-      alert(`player1 has won`)      
+      player1Win = true;    
     }
-    if (gameCell2x1.className === "player1Cell" && gameCell2x2.className === "player1Cell" && gameCell2x3.className === "player1Cell") {
+    else if (gameCell2x1.className === "player1Cell" && gameCell2x2.className === "player1Cell" && gameCell2x3.className === "player1Cell") {
       gameStarted = false;
-      alert(`player1 has won`)
+      player1Win = true;    
     }
-    if (gameCell3x1.className === "player1Cell" && gameCell3x2.className === "player1Cell" && gameCell3x3.className === "player1Cell") {
+    else if (gameCell3x1.className === "player1Cell" && gameCell3x2.className === "player1Cell" && gameCell3x3.className === "player1Cell") {
       gameStarted = false;
-      alert(`player1 has won`)
+      player1Win = true;    
     }
-    if (gameCell1x1.className === "player1Cell" && gameCell2x1.className === "player1Cell" && gameCell3x1.className === "player1Cell") {
+    else if (gameCell1x1.className === "player1Cell" && gameCell2x1.className === "player1Cell" && gameCell3x1.className === "player1Cell") {
       gameStarted = false;
-      alert(`player1 has won`)
+      player1Win = true;    
     }
-    if (gameCell1x2.className === "player1Cell" && gameCell2x2.className === "player1Cell" && gameCell3x2.className === "player1Cell") {
+    else if (gameCell1x2.className === "player1Cell" && gameCell2x2.className === "player1Cell" && gameCell3x2.className === "player1Cell") {
       gameStarted = false;
-      alert(`player1 has won`)
+      player1Win = true;    
     }
-    if (gameCell1x3.className === "player1Cell" && gameCell2x3.className === "player1Cell" && gameCell3x3.className === "player1Cell") {
+    else if (gameCell1x3.className === "player1Cell" && gameCell2x3.className === "player1Cell" && gameCell3x3.className === "player1Cell") {
       gameStarted = false;
-      alert(`player1 has won`)
+      player1Win = true;
     }
-    if (gameCell1x1.className === "player1Cell" && gameCell2x2.className === "player1Cell" && gameCell3x3.className === "player1Cell") {
+    else if (gameCell1x1.className === "player1Cell" && gameCell2x2.className === "player1Cell" && gameCell3x3.className === "player1Cell") {
       gameStarted = false;
-      alert(`player1 has won`)
+      player1Win = true;    
     }
-    if (gameCell3x1.className === "player1Cell" && gameCell2x2.className === "player1Cell" && gameCell1x3.className === "player1Cell") {
+    else if (gameCell3x1.className === "player1Cell" && gameCell2x2.className === "player1Cell" && gameCell1x3.className === "player1Cell") {
       gameStarted = false;
-      alert(`player1 has won`)
-    }    
+      player1Win = true;
+    }
+    gameWon();
   }
 
   function checkWin2() {
     if (gameCell1x1.className === "player2Cell" && gameCell1x2.className === "player2Cell" && gameCell1x3.className === "player2Cell") {
       gameStarted = false;
-      alert(`player2 has won`)
+      player2Win = true;    
     }
-    if (gameCell2x1.className === "player2Cell" && gameCell2x2.className === "player2Cell" && gameCell2x3.className === "player2Cell") {
+    else if (gameCell2x1.className === "player2Cell" && gameCell2x2.className === "player2Cell" && gameCell2x3.className === "player2Cell") {
       gameStarted = false;
-      alert(`player2 has won`)
+      player2Win = true; 
     }
-    if (gameCell3x1.className === "player2Cell" && gameCell3x2.className === "player2Cell" && gameCell3x3.className === "player2Cell") {
+    else if (gameCell3x1.className === "player2Cell" && gameCell3x2.className === "player2Cell" && gameCell3x3.className === "player2Cell") {
       gameStarted = false;
-      alert(`player2 has won`)
+      player2Win = true; 
     }
-    if (gameCell1x1.className === "player2Cell" && gameCell2x1.className === "player2Cell" && gameCell3x1.className === "player2Cell") {
+    else if (gameCell1x1.className === "player2Cell" && gameCell2x1.className === "player2Cell" && gameCell3x1.className === "player2Cell") {
       gameStarted = false;
-      alert(`player2 has won`)
+      player2Win = true; 
     }
-    if (gameCell1x2.className === "player2Cell" && gameCell2x2.className === "player2Cell" && gameCell3x2.className === "player2Cell") {
+    else if (gameCell1x2.className === "player2Cell" && gameCell2x2.className === "player2Cell" && gameCell3x2.className === "player2Cell") {
       gameStarted = false;
-      alert(`player2 has won`)
+      player2Win = true; 
     }
-    if (gameCell1x3.className === "player2Cell" && gameCell2x3.className === "player2Cell" && gameCell3x3.className === "player2Cell") {
+    else if (gameCell1x3.className === "player2Cell" && gameCell2x3.className === "player2Cell" && gameCell3x3.className === "player2Cell") {
       gameStarted = false;
-      alert(`player2 has won`)
+      player2Win = true; 
     }
-    if (gameCell1x1.className === "player2Cell" && gameCell2x2.className === "player2Cell" && gameCell3x3.className === "player2Cell") {
+    else if (gameCell1x1.className === "player2Cell" && gameCell2x2.className === "player2Cell" && gameCell3x3.className === "player2Cell") {
       gameStarted = false;
-      alert(`player2 has won`)
+      player2Win = true; 
     }
-    if (gameCell3x1.className === "player2Cell" && gameCell2x2.className === "player2Cell" && gameCell1x3.className === "player2Cell") {
+    else if (gameCell3x1.className === "player2Cell" && gameCell2x2.className === "player2Cell" && gameCell1x3.className === "player2Cell") {
       gameStarted = false;
-      alert(`player2 has won`)
+      player2Win = true; 
     }
+    gameWon();
   }
   
+  function gameWon() {
+    if (player1Win === true) {
+      printGameResult(currentPlayers[0], currentPlayers[1], roundNumber)
+      currentPlayers = []
+    } else if (player2Win === true) {
+      printGameResult(currentPlayers[1], currentPlayers[0], roundNumber)
+      currentPlayers = []
+    }
+ }
+
   function printGameResult(winner, loser, roundsPlayed) {
+    alert(`${winner} has won`)
     const matchResultStringWin = `${winner} won agaisnt ${loser} after ${roundsPlayed} rounds played`
     const matchResultStringLoss = `${loser} lost against ${winner} after ${roundsPlayed} rounds played`
-    
-    matchResults = {
-      winner: winner,
-      loser: loser,
-      roundsPlayed: roundsPlayed
-    }
-    //push match results to json server via userManagement
-
+    pushGameResult(winner, loser, gameLength)  
   }
 
   return sectionGame;

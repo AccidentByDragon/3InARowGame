@@ -13,7 +13,8 @@ export default function userManagement() {
       results: []
     }
   ]
-  let matchHistory = [
+  
+  const matchHistory = [
     {
       winner: "Karl",
       loser: "Bob",
@@ -21,22 +22,27 @@ export default function userManagement() {
     }
   ]
   //const nextId = nextId++
-
-
-/* const newUser = {
-    id: nextId,
-    name: "name",
-    matchAmount: 0,
-    results: []
-  } */
-
-
- currentUsers();
+ //fetchCurrentUsers();
   return users;
 }
 
-export async function fetchCurrentUsers() {
+export function pushGameResult(winner, loser, gameLength) {
+  
+}
+
+export function pushUser(users = [], userAdd) {
+  const newUser = {
+    //id: nextId,
+    name: userAdd,
+    matchAmount: 0,
+    results: []
+  }
+  users.push(newUser)
+  return users;
+}
+
+/* export async function fetchCurrentUsers() {
     let repsonse = await fetch(`/users`);
     const users = response.json()
     console.log(users);
-  }
+  } */
