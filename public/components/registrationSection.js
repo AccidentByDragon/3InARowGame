@@ -44,7 +44,7 @@ export default function registrationSection(users) {
     event.preventDefault();
     const usernameSt = document.getElementById("userName").value;
     const userExists = tempUsers.some(tempUsers =>
-    tempUsers.username === usernameSt);
+    tempUsers.name === usernameSt);
     console.log("Did user exist - ", userExists);
     if (userExists == true) {
         alert("a user by this name already exists")
@@ -52,7 +52,6 @@ export default function registrationSection(users) {
     else {
         const userId = tempUsers.length + 1
         addUser(usernameSt, userId);
-        alert("push")
       }
     updateLists();
   }
