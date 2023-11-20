@@ -1,4 +1,4 @@
-//import usersManagement from "./components/userManagement.js";
+import { getAllUsers, addUser, getOneUser, updateUser } from "./components/userManagement.js";
 
 export default function UserSection(users) {
   const sectionUsers = document.createElement("section");

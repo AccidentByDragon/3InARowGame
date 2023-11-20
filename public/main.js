@@ -1,13 +1,11 @@
 import registrationSection from "./components/registrationSection.js";
 import Game from "./components/gameSection.js"
 import UserSection from "./components/userSection.js"
-import usersManagement from "./components/userManagement.js";
-import { pushUser } from "./components/userManagement.js";
-//import { fetchCurrentUsers } from "./components/userManagement.js";
+import { getAllUsers, addUser, getOneUser, updateUser } from "./components/userManagement.js";
 
-//fetchCurrentUsers();
-let users =[]
-pushUser(users, "bob");
+
+let users = getAllUsers();
+
 
 
 const header = document.createElement("header");

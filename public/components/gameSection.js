@@ -1,5 +1,4 @@
-import userManagement from "./userManagement.js";
-import { pushGameResult } from "./userManagement.js";
+import { getAllUsers, addUser, getOneUser, updateUser } from "./userManagement.js";
 
 export default function Game(plyrList) {
   const sectionGame = document.createElement("section");

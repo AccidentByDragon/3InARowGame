@@ -1,48 +1,38 @@
-export default function userManagement() {
-  let users = [
-    {
-      id: 1,
-      name: "Karl",
-      matchAmount: 1,
-      results: []
-    },
-    {
-      id: 2,
-      name: "Bob",
-      matchAmount: 1,
-      results: []
-    }
-  ]
-  
-  const matchHistory = [
-    {
-      winner: "Karl",
-      loser: "Bob",
-      roundsPlayed: 5
-    }
-  ]
-  //const nextId = nextId++
- //fetchCurrentUsers();
-  return users;
-}
-
-export function pushGameResult(winner, loser, gameLength) {
-  
-}
-
-export function pushUser(users = [], userAdd) {
-  const newUser = {
-    //id: nextId,
-    name: userAdd,
-    matchAmount: 0,
-    results: []
+export async function getAllUsers() {
+    const res = await fetch('/data')
+    const data = await res.json()
+    return data
   }
-  users.push(newUser)
-  return users;
-}
 
-/* export async function fetchCurrentUsers() {
-    let repsonse = await fetch(`/users`);
-    const users = response.json()
-    console.log(users);
-  } */
+  export async function addUser(userName,id) {
+    let response = await fetch('/data', {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        "id": id,
+        "name": userName,
+        "matchAmount": 0,
+        "matchHistory": []
+      })
+    })
+
+    response = await response.json()
+    console.log(response);
+  }
+
+  export async function getOneUser(userId) {
+    const res = await fetch('/data/' + userId)
+    const data = await res.json()
+    return data;
+  }
+
+  export async function updateUser(user) {
+    let response = await fetch('/data/' + user.id, {
+      method: 'put',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(user)
+    })
+
+    response = await response.json()
+    console.log(response);
+  }
