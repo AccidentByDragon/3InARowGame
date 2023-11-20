@@ -1,0 +1,92 @@
+table{
+  border: 0.5vh solid black;
+}
+body{
+  background-color: rgb(22, 102, 46);
+  border: 2vh solid black;
+}
+
+h2{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: baseline;
+    font-size: 4vh;
+}
+
+nav{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;  
+  background-color: rgb(99, 28, 165);
+}
+nav > a{
+  margin: 1vh;
+  color: white;
+  font-size: 2.5vh;
+}
+
+#userForm{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    height: 4vh;
+}
+#userForm > input{
+  margin: 1vh;
+}
+
+#playerSelectForm{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+  height: 4vh;
+}
+#playerSelectForm > input{
+  margin: 1vh;
+}
+#playerSelectForm>select {
+  margin: 1vh;
+}
+#Users{  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  background-color: rgb(99, 28, 165);
+}
+
+#grid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: darkred;
+}
+
+.cell{
+  flex:0 0 32%;
+  height: 150px;
+  width: 50px;
+  margin: 1vh;
+  background-color: #999;
+}
+.player1Cell{
+  flex: 0 0 32%;
+  height: 150px;
+  width: 50px;
+  margin: 1vh;
+  background-color: blue;
+}
+
+.player2Cell{
+  flex: 0 0 32%;
+  height: 150px;
+  width: 50px;
+  margin: 1vh;
+  background-color: yellow;
+}

@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Karl",
+      "matchAmount": 0,
+      "results": []
+    },
+    {
+      "id": 2,
+      "name": "Bob",
+      "matchAmount": 0,
+      "results": []
+    },
+    {
+      "id": 3,
+      "name": "Rolf",
+      "matchAmount": 0,
+      "results": []
+    }
+  ]
+}
