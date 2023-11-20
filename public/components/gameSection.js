@@ -1,4 +1,5 @@
 import { getAllUsers, addUser, getOneUser, updateUser } from "./userManagement.js";
+import { updateLists } from "../main.js";
 
 export default function Game(plyrList) {
   const sectionGame = document.createElement("section");
@@ -269,6 +270,7 @@ export default function Game(plyrList) {
     loserPlyr.matchAmount++
     loserPlyr.results.push(matchResultStringLoss);       
     updateUser(loserPlyr);
+    updateLists();
   }
 
   return sectionGame;

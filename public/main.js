@@ -37,3 +37,9 @@ document.body.appendChild(Game(users));
 
 //User Section
 document.body.appendChild(UserSection(users));
+
+
+export function updateLists() {
+  users = getAllUsers();
+  location.reload();
+}

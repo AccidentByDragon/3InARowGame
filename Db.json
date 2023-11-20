@@ -3,20 +3,20 @@
     {
       "id": 1,
       "name": "Karl",
-      "matchAmount": 2,
-      "results": [
-        " Karl won agaisnt Bob after 2 rounds played",
-        " Karl won agaisnt Bob after 3 rounds played"
-      ]
+      "matchAmount": 0,
+      "results": []
     },
     {
       "id": 2,
       "name": "Bob",
-      "matchAmount": 2,
-      "results": [
-        " Bob lost against Karl after 2 rounds played",
-        " Bob lost against Karl after 3 rounds played"
-      ]
+      "matchAmount": 0,
+      "results": []
+    },
+    {
+      "id": 3,
+      "name": "Rolf",
+      "matchAmount": 0,
+      "results": []
     }
   ]
 }

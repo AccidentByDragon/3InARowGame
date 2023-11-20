@@ -12,7 +12,7 @@ export async function getAllUsers() {
         "id": id,
         "name": userName,
         "matchAmount": 0,
-        "matchHistory": []
+        "results": []
       })
     })
 
