@@ -26,7 +26,7 @@ export default function registrationSection(users) {
   //inputUpw.type = "text";
   //inputUpw.id = "password";
   const inputSubmit = document.createElement("input");
-  inputSubmit.type = "button";
+  inputSubmit.type = "Submit";
   inputSubmit.value = "Submit";
 
 
@@ -39,24 +39,26 @@ export default function registrationSection(users) {
   document.body.appendChild(sectionRegistration);
 
   document.querySelector(`#userForm`).addEventListener(`Submit`, registerUser);
+  
+  function registerUser(event)
+    { 
+      event.preventDefault();
+      const userExists = users.some(users =>
+        users.username === usernameSt);
+      console.log("Did user exist - ", userExists);
+    if (userExists == true) {
+      alert("a user by this name already exists")
+    }
+    else {
+      const userId = users.length + 1
+      addUser(usernameSt, userId);
+      alert("push")
+    }  
+  }
   return sectionRegistration;
 }
 
-function registerUser(event)
-{ 
-  event.preventDefault();
-  const userExists = users.some(users =>
-    users.username === usernameSt);
-  console.log("Did user exist - ", userExists);
-  if (userExists == true) {
-    alert("a user by this name already exists")
-  }
-  else {
-    const userId = users.length + 1
-    users = addUser(usernameSt, userId);    
-  }
-  return;
-}
+
 
 
 // Process added user

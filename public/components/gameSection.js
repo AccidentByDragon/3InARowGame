@@ -59,7 +59,6 @@ export default function Game(plyrList) {
     }
   })
 
-
   let roundNumber = 0;  
   let player1Turn = true;
   let player2Turn = false;
@@ -222,24 +221,54 @@ export default function Game(plyrList) {
   }
   
   function gameWon() {
-    if (player1Win === true) {
+    if (player1Win === true) {      
       printGameResult(currentPlayers[0], currentPlayers[1], roundNumber)
-      currentPlayers = []
-    } else if (player2Win === true) {
+      resetGame();
+    } else if (player2Win === true) {      
       printGameResult(currentPlayers[1], currentPlayers[0], roundNumber)
-      currentPlayers = []
+      resetGame();
     }
- }
+  }
+  
+  function resetGame() {
+    currentPlayers = []
+    roundNumber = 0;
+    player1Turn = true;
+    player2Turn = false;
+    player1Win = false;
+    player2Win = false;
+    player1Pieces = 3;
+    player2Pieces = 3;
+    const cells = document.querySelectorAll("#grid > .player1Cell")
+    cells.forEach(element => {
+      element.className = "cell"
+    });
+    const cells2 = document.querySelectorAll("#grid > .player2Cell")
+    cells2.forEach(element => {
+      element.className = "cell"
+    });
+  }
+
+  function findPlayer(searchName) {
+    for (let plyr of plyrList) {
+      if (plyr.name === searchName) {
+        return plyr;
+      }
+    }
+  }
 
   function printGameResult(winner, loser, roundsPlayed) {
-    const tempWinner = getOneUser(winner.id);
-    const tempLoser = getOneUser(loser.id);
+    const winnerPlyr = findPlayer(winner);
+    const loserPlyr = findPlayer(loser)
     alert(`${winner} has won`)
-    const matchResultStringWin = `${winner} won agaisnt ${loser} after ${roundsPlayed} rounds played`
-    const matchResultStringLoss = `${loser} lost against ${winner} after ${roundsPlayed} rounds played`
-    
-    
-    update()  
+    const matchResultStringWin = ` ${winner} won agaisnt ${loser} after ${roundsPlayed} rounds played`
+    const matchResultStringLoss = ` ${loser} lost against ${winner} after ${roundsPlayed} rounds played`
+    winnerPlyr.matchAmount++
+    winnerPlyr.results.push(matchResultStringWin);
+    updateUser(winnerPlyr);
+    loserPlyr.matchAmount++
+    loserPlyr.results.push(matchResultStringLoss);       
+    updateUser(loserPlyr);
   }
 
   return sectionGame;

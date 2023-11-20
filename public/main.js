@@ -37,14 +37,3 @@ document.body.appendChild(Game(users));
 
 //User Section
 document.body.appendChild(UserSection(users));
-
-/* function pushUser(users = [], userAdd) {
-  const newUser = {
-    //id: nextId,
-    name: userAdd,
-    matchAmount: 0,
-    results: []
-  }
-  users.push(newUser)
-  return users;
-} */
