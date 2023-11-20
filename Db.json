@@ -11,6 +11,12 @@
       "name": "Bob",
       "matchAmount": 0,
       "results": []
+    },
+    {
+      "id": 3,
+      "name": "Rolf",
+      "matchAmount": 0,
+      "results": []
     }
   ]
 }
