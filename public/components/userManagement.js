@@ -1,11 +1,11 @@
 export async function getAllUsers() {
-    const res = await fetch('/data')
+  const res = await fetch('/users')
     const data = await res.json()
     return data
   }
 
   export async function addUser(userName,id) {
-    let response = await fetch('/data', {
+    let response = await fetch('/users', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -21,13 +21,13 @@ export async function getAllUsers() {
   }
 
   export async function getOneUser(userId) {
-    const res = await fetch('/data/' + userId)
+    const res = await fetch('/users/' + userId)
     const data = await res.json()
     return data;
   }
 
   export async function updateUser(user) {
-    let response = await fetch('/data/' + user.id, {
+    let response = await fetch('/users/' + user.id, {
       method: 'put',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(user)

@@ -4,7 +4,7 @@ import UserSection from "./components/userSection.js"
 import { getAllUsers, addUser, getOneUser, updateUser } from "./components/userManagement.js";
 
 
-let users = getAllUsers();
+let users = await getAllUsers();
 
 
 

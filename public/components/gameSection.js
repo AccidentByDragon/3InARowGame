@@ -232,10 +232,14 @@ export default function Game(plyrList) {
  }
 
   function printGameResult(winner, loser, roundsPlayed) {
+    const tempWinner = getOneUser(winner.id);
+    const tempLoser = getOneUser(loser.id);
     alert(`${winner} has won`)
     const matchResultStringWin = `${winner} won agaisnt ${loser} after ${roundsPlayed} rounds played`
     const matchResultStringLoss = `${loser} lost against ${winner} after ${roundsPlayed} rounds played`
-    pushGameResult(winner, loser, gameLength)  
+    
+    
+    update()  
   }
 
   return sectionGame;
